@@ -2,10 +2,18 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<title>Lohith Singh K | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lohith Singh K | Operations Professional</title>
+
+<meta name="description" content="Professional portfolio of Lohith Singh K – Financial Operations & Insurance Administration Specialist">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <style>
 
@@ -13,13 +21,14 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Segoe UI;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 background:#0f172a;
 color:white;
 overflow-x:hidden;
+scroll-behavior:smooth;
 }
 
 #particles-js{
@@ -29,41 +38,86 @@ height:100%;
 z-index:-1;
 }
 
-header{
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+padding:15px;
 text-align:center;
-padding:120px 20px;
+z-index:10;
 }
 
-h1{
-font-size:55px;
+nav a{
+margin:0 20px;
+text-decoration:none;
+color:white;
+font-weight:500;
+}
+
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.profile-img{
+width:160px;
+height:160px;
+border-radius:50%;
+border:4px solid #38bdf8;
+margin-bottom:20px;
+box-shadow:0 0 30px #38bdf8;
+}
+
+header h1{
+font-size:60px;
 color:#38bdf8;
 text-shadow:0 0 20px #38bdf8;
 }
 
-.subtitle{
+.typing{
 font-size:22px;
-color:#cbd5f5;
 margin-top:10px;
+color:#cbd5f5;
+}
+
+.button{
+margin-top:20px;
+background:#38bdf8;
+padding:12px 25px;
+border-radius:8px;
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+section{
+padding:80px 10%;
 }
 
 .container{
-width:90%;
-max-width:1000px;
+max-width:1100px;
 margin:auto;
 }
 
 .card{
 background:rgba(255,255,255,0.05);
-padding:30px;
-margin:30px 0;
+padding:35px;
 border-radius:20px;
-backdrop-filter:blur(15px);
-box-shadow:0 0 20px rgba(0,0,0,0.5);
+backdrop-filter:blur(20px);
+margin-bottom:30px;
+box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
 h2{
+color:#38bdf8;
 margin-bottom:20px;
-color:#60a5fa;
 }
 
 .timeline{
@@ -71,8 +125,8 @@ border-left:3px solid #38bdf8;
 padding-left:20px;
 }
 
-.timeline div{
-margin-bottom:20px;
+.timeline-item{
+margin-bottom:30px;
 }
 
 .skills{
@@ -81,16 +135,16 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
-.skill-bar{
+.skill{
 background:#1e293b;
 border-radius:10px;
 overflow:hidden;
 }
 
-.skill-bar span{
+.skill span{
 display:block;
-padding:10px;
 background:#38bdf8;
+padding:10px;
 animation:grow 2s ease forwards;
 }
 
@@ -98,23 +152,13 @@ animation:grow 2s ease forwards;
 from{width:0}
 }
 
-button{
-background:#38bdf8;
-border:none;
-padding:12px 25px;
-border-radius:8px;
-color:black;
-font-weight:bold;
-cursor:pointer;
-}
-
 .contact input,
 .contact textarea{
 width:100%;
 padding:10px;
 margin-top:10px;
-border:none;
 border-radius:8px;
+border:none;
 }
 
 footer{
@@ -123,20 +167,11 @@ padding:40px;
 color:#94a3b8;
 }
 
-.toggle{
-position:fixed;
-top:20px;
-right:20px;
-cursor:pointer;
-background:#38bdf8;
-color:black;
-padding:10px;
-border-radius:8px;
-}
-
-.light{
-background:white;
-color:black;
+.social a{
+margin:0 10px;
+color:#38bdf8;
+font-size:20px;
+text-decoration:none;
 }
 
 </style>
@@ -147,101 +182,169 @@ color:black;
 
 <div id="particles-js"></div>
 
-<div class="toggle" onclick="toggleMode()">Toggle Mode</div>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</nav>
 
 <header>
+
+<img src="profile.jpg" class="profile-img">
+
 <h1>Lohith Singh K</h1>
-<div class="subtitle">Operations & Financial Services Professional</div>
-<br>
-<a href="resume.pdf">
-<button>Download Resume</button>
-</a>
+
+<div class="typing">
+<span id="typed"></span>
+</div>
+
+<a href="resume.pdf" class="button">Download Resume</a>
+
 </header>
+
+<section id="about">
 
 <div class="container">
 
 <div class="card">
-<h2>About Me</h2>
+
+<h2>Professional Summary</h2>
+
 <p>
-Operations professional with experience in insurance administration,
-retirement plan processing, KYC compliance and financial operations.
-Experienced working with global clients and high-volume transactions.
+
+Operations professional with 2.8+ years of experience in insurance administration and retirement plan processing. 
+Skilled in KYC verification, regulatory compliance, client communication and financial operations workflows.
+Experienced in managing high-volume transactions and maintaining SLA compliance while working with international clients.
+
 </p>
+
 </div>
 
+</div>
+
+</section>
+
+<section id="experience">
+
+<div class="container">
+
 <div class="card">
-<h2>Experience</h2>
+
+<h2>Professional Experience</h2>
 
 <div class="timeline">
 
-<div>
-<b>ICICI Lombard General Insurance</b><br>
-Back Office Executive – Insurance Operations
+<div class="timeline-item">
+
+<h3>ICICI Lombard General Insurance</h3>
+
+<p>Back Office Executive – Operations</p>
+
+<ul>
+
+<li>Managed Group Health Insurance and Group Personal Accident operations</li>
+<li>Handled underwriting coordination and quote processing</li>
+<li>Performed KYC verification and payment investigations</li>
+<li>Ensured regulatory compliance and SLA adherence</li>
+
+</ul>
+
 </div>
 
-<div>
-<b>Wipro Ltd</b><br>
-Associate – Retirement Plan Administration
+<div class="timeline-item">
+
+<h3>Wipro Ltd</h3>
+
+<p>Associate – Operations (Australian Client)</p>
+
+<ul>
+
+<li>Processed retirement plan withdrawals and financial requests</li>
+<li>Maintained operational WIP reports</li>
+<li>Handled client communication and service requests</li>
+<li>Conducted internal quality checks</li>
+
+</ul>
+
+</div>
+
 </div>
 
 </div>
 
 </div>
+
+</section>
+
+<section id="skills">
+
+<div class="container">
 
 <div class="card">
-<h2>Skills</h2>
+
+<h2>Core Skills</h2>
 
 <div class="skills">
 
-<div class="skill-bar">
-<span style="width:90%">Financial Operations</span>
-</div>
+<div class="skill"><span style="width:90%">Financial Operations</span></div>
+<div class="skill"><span style="width:85%">Insurance Administration</span></div>
+<div class="skill"><span style="width:80%">KYC Compliance</span></div>
+<div class="skill"><span style="width:75%">Excel Data Analysis</span></div>
+<div class="skill"><span style="width:70%">Client Communication</span></div>
 
-<div class="skill-bar">
-<span style="width:85%">Insurance Administration</span>
-</div>
-
-<div class="skill-bar">
-<span style="width:80%">KYC Compliance</span>
-</div>
-
-<div class="skill-bar">
-<span style="width:75%">Excel Data Analysis</span>
 </div>
 
 </div>
 
 </div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
 
 <div class="card">
+
 <h2>Contact Recruiter</h2>
 
 <form class="contact">
 
-<input placeholder="Your Name">
+<input placeholder="Name">
 <input placeholder="Email">
-
 <textarea placeholder="Message"></textarea>
 
 <br><br>
 
-<button>Send Message</button>
+<button class="button">Send Message</button>
 
 </form>
 
+<div class="social" style="margin-top:20px">
+
+<a href="#">LinkedIn</a>
+<a href="#">Email</a>
+
 </div>
 
 </div>
+
+</div>
+
+</section>
 
 <footer>
+
 © 2026 Lohith Singh K
+
 </footer>
 
 <script>
 
-particlesJS("particles-js", {
+particlesJS("particles-js",{
 particles:{
-number:{value:80},
+number:{value:90},
 size:{value:3},
 color:{value:"#38bdf8"},
 line_linked:{enable:true,color:"#38bdf8"},
@@ -249,9 +352,17 @@ move:{speed:2}
 }
 });
 
-function toggleMode(){
-document.body.classList.toggle("light");
-}
+var typed = new Typed('#typed', {
+strings:[
+"Operations Professional",
+"Financial Services Specialist",
+"Insurance Administration Expert",
+"Retirement Plan Operations"
+],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+});
 
 </script>
 
